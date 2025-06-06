@@ -14,7 +14,6 @@ A lightweight and robust RESTful API built with FastAPI for managing class booki
 - Logging & basic input validation
 - Modular code structure and Pydantic models
 - Unit tests using `pytest`
-- Auto-generated docs via Swagger UI
 
 ---
 
@@ -34,13 +33,21 @@ A lightweight and robust RESTful API built with FastAPI for managing class booki
 
 fitness_api/
 │
+
 ├── main.py # FastAPI application and routes
+
 ├── models.py # SQLAlchemy models
+
 ├── schemas.py # Pydantic request/response schemas
+
 ├── database.py # SQLite DB connection
+
 ├── seed.py # Seed sample data into DB
+
 ├── test_main.py # Unit tests
+
 ├── app.log # Log file (generated at runtime)
+
 └── README.md # You're here!
 
 
@@ -48,61 +55,53 @@ fitness_api/
 
 1. **Clone the repo:**
 
-
----
-
-## ⚙️ Setup Instructions
-
-1. **Clone the repo:**
-
-bash
-git clone https://github.com/your-username/fitness-api.git
-cd fitness-api
+- bash
+- git clone https://github.com/psmr-work/fitness-booking-api.git
+- cd fitness-api
 
 
 2. **Create a virtual environment and activate:**
 
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+- python -m venv venv
+- source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 
 3. **Install Dependencies**
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 
 4. **Seed the database with sample classes:**
 
-python seed.py
+- python seed.py
 
 
 5. **Run the API**
 
-uvicorn main:app --reload
+- uvicorn main:app --reload
 
 
 6. **Open the API docs in browser:**
 
-http://127.0.0.1:8000/docs
+- http://127.0.0.1:8000/docs
 
 
 ----
 
 ## Run Unit Tests
 
-pytest test_main.py
+- pytest test_main.py
 
 ----
 
 ## Sample Seed Data
 
-The seed.py file adds 3 sample classes:
+- The seed.py file adds 3 sample classes:
+- Yoga (with slots)
+- Zumba (with slots)
+- HIIT (with slots)
 
-Yoga (with slots)
-Zumba (with slots)
-HIIT (with slots)
-
-You can modify this file to add more classes or reset slot counts.
+- You can modify this file to add more classes or reset slot counts.
 
 ----
 
@@ -110,12 +109,12 @@ You can modify this file to add more classes or reset slot counts.
 
 1. **Get all classes**
 
-curl -X GET "http://localhost:8000/classes?tz=Asia/Kolkata" -H "accept: application/json"
+- curl -X GET "http://localhost:8000/classes?tz=Asia/Kolkata" -H "accept: application/json"
 
 
 2. **Book a class**
 
-curl -X POST "http://localhost:8000/book" -H "Content-Type: application/json" -d '{
+- curl -X POST "http://localhost:8000/book" -H "Content-Type: application/json" -d '{
   "class_id": 1,
   "client_name": "Alice",
   "client_email": "alice@example.com"
@@ -123,12 +122,12 @@ curl -X POST "http://localhost:8000/book" -H "Content-Type: application/json" -d
 
 3. **Get all bookings**
 
-curl -X GET "http://localhost:8000/bookings" -H "accept: application/json"
+- curl -X GET "http://localhost:8000/bookings" -H "accept: application/json"
 
 
 4. **Get booking by email**
 
-curl -X GET "http://localhost:8000/bookings" -H "accept: application/json"
+- curl -X GET "http://localhost:8000/bookings" -H "accept: application/json"
 
 
 
