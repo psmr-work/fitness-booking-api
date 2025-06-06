@@ -135,5 +135,5 @@ curl -X GET "http://localhost:8000/bookings" -H "accept: application/json"
 
 
 
-Author
+## Author
 Mahesh Reddy
